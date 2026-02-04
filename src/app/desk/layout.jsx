@@ -7,17 +7,22 @@ import { notebooks } from "@/library/notebooks";
 import { useState } from "react";
 const DeskLayout = ({ children }) => {
   const [active, setActive] = useState("Notebook");
-  const selectBook = (title) => {
-    setActive(title);
+  const selectBook = ({ title, notes }) => {
+    setActive([title, notes]);
   };
   return (
     <div className="flex h-screen">
       <div className="w-1/5">
-        <SidePanel label="Books">
-          <CoverNotebook title={active} />
+        <SidePanel label="Notebooks">
+          <CoverNotebook title={active[0]} />
           <div className="flex h-full flex-col divide-y divide-stone-700 overflow-y-scroll p-6">
             {notebooks.map((book) => (
-              <Notebook key={book.id} notes={book.notes} onSelect={selectBook}>
+              <Notebook
+                key={book.id}
+                notes={book.notes}
+                onSelect={selectBook}
+                data={book}
+              >
                 {book.title}
               </Notebook>
             ))}
@@ -31,10 +36,12 @@ const DeskLayout = ({ children }) => {
 
       <main className="w-3/5 bg-amber-500">{children}</main>
       <div className="w-1/5">
-        <SidePanel label="notes">
-          <div className="bg-white">hello</div>
-          <div className="bg-white">hello</div>
-          <div className="mt-auto bg-white">hello</div>
+        <SidePanel label="Notes">
+          {active[1].map((note) => (
+            <div key={note.id} className="bg-white">
+              {note.title}
+            </div>
+          ))}
         </SidePanel>
       </div>
     </div>
