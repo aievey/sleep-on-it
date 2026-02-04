@@ -5,8 +5,13 @@ import Notebook from "@/components/desk-components/notebook";
 import Account from "@/components/desk-components/account";
 import { notebooks } from "@/library/notebooks";
 import { useState } from "react";
+
 const DeskLayout = ({ children }) => {
-  const [active, setActive] = useState("Notebook");
+  const [active, setActive] = useState([
+    notebooks[0].title,
+    notebooks[0].notes,
+  ]);
+  console.log("logging active: ", active);
   const selectBook = ({ title, notes }) => {
     setActive([title, notes]);
   };
