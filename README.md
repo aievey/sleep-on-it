@@ -1,3 +1,3 @@
 # Sleep On It.
 
-![Flow Chart](note-app.png)
+![Flow Chart](./Public/note-app.png)
