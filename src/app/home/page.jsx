@@ -26,7 +26,7 @@ const Welcome = () => {
         </p>
       </div>
       <div>
-        <button>Want to start on something new?</button>
+        <button>I want to start on something new!</button>
         <button>Take me where we left off.</button>
       </div>
     </div>
