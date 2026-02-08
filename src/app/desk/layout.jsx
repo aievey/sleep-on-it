@@ -11,7 +11,6 @@ const DeskLayout = ({ children }) => {
     notebooks[0].title,
     notebooks[0].notes,
   ]);
-  console.log("logging active: ", active);
   const selectBook = ({ title, notes }) => {
     setActive([title, notes]);
   };
