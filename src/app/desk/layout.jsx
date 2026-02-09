@@ -38,7 +38,8 @@ const DeskLayout = ({ children }) => {
         </SidePanel>
       </div>
 
-      <main className="w-3/5 bg-amber-500">{children}</main>
+      <main className="w-3/5">{children}</main>
+
       <div className="w-1/5">
         <SidePanel label="Notes">
           {active[1].map((note) => (
