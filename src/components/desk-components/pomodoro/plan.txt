@@ -1,0 +1,15 @@
+
+
+state:- mode
+        timeleft
+        sessions
+        isPaused
+
+user ops:- pause/resume timer
+           reset timer
+           start new timer
+           
+
+features:- sound when timer goes off
+           automatically switch when timer ends
+    
