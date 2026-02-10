@@ -1,37 +1,28 @@
 "use client";
 import SidePanel from "@/components/desk-components/side-navigation-panels";
-import CoverNotebook from "@/components/desk-components/notebook-cover";
-import Notebook from "@/components/desk-components/notebook";
+import CoverNotebook from "@/components/desk-components/books/notebook-cover";
+import BookShelf from "@/components/desk-components/books/book-shelf";
 import Account from "@/components/desk-components/account";
 import { notebooks } from "@/library/notebooks";
 import { useState } from "react";
+import Notes from "@/components/desk-components/notes/note";
 
 const DeskLayout = ({ children }) => {
   const [active, setActive] = useState([
     notebooks[0].title,
     notebooks[0].notes,
   ]);
+
   const selectBook = ({ title, notes }) => {
     setActive([title, notes]);
   };
+
   return (
     <div className="flex h-screen">
       <div className="w-1/5">
         <SidePanel label="Notebooks">
           <CoverNotebook title={active[0]} />
-          <div className="flex h-full flex-col divide-y divide-stone-700 overflow-y-scroll p-6">
-            {notebooks.map((book) => (
-              <Notebook
-                key={book.id}
-                notes={book.notes}
-                onSelect={selectBook}
-                data={book}
-              >
-                {book.title}
-              </Notebook>
-            ))}
-          </div>
-
+          <BookShelf data={active} onSelect={selectBook} />
           <div className="mt-auto">
             <Account />
           </div>
@@ -42,11 +33,7 @@ const DeskLayout = ({ children }) => {
 
       <div className="w-1/5">
         <SidePanel label="Notes">
-          {active[1].map((note) => (
-            <div key={note.id} className="bg-white">
-              {note.title}
-            </div>
-          ))}
+          <Notes data={active[1]} />
         </SidePanel>
       </div>
     </div>
