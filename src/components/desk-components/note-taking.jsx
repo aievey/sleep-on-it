@@ -21,6 +21,7 @@ const Note = ({ phrase, description }) => {
 const Summary = ({ children }) => {
   return (
     <textarea
+      required
       className="h-70 w-full rounded-xl bg-amber-400 p-5 text-amber-800"
       defaultValue={children}
       type="text"
@@ -28,16 +29,24 @@ const Summary = ({ children }) => {
   );
 };
 
-const NoteActions = () => {
+const PomodoroActions = () => {
   return (
     <div className="flex gap-2">
-      <button className="w-1/2 rounded-xl bg-green-500 p-5 font-semibold tracking-wide text-green-50 hover:cursor-pointer">
-        Add Note
+      <button className="w-1/2 rounded-xl bg-orange-500 p-5 font-semibold tracking-wide text-green-50 hover:cursor-pointer">
+        New POMODORO
       </button>
       <button className="w-1/2 rounded-xl bg-blue-400 p-5 text-lg font-semibold tracking-wide text-blue-50 hover:cursor-pointer">
         Save
       </button>
     </div>
+  );
+};
+
+const NewNote = () => {
+  return (
+    <button className="w-full rounded-xl bg-green-500 p-4 font-semibold tracking-wide text-green-50">
+      Add Note
+    </button>
   );
 };
 
@@ -71,10 +80,10 @@ const NoteTaking = () => {
       {note.map((note) => (
         <Note key={note.id} phrase={note.key} description={note.description} />
       ))}
-      
 
+      <NewNote />
       <Summary>ok</Summary>
-      <NoteActions />
+      <PomodoroActions />
     </main>
   );
 };

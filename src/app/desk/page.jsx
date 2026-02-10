@@ -1,6 +1,6 @@
 import NoteTaking from "@/components/desk-components/note-taking";
 import NotebookSummary from "@/components/desk-components/summary";
-import { Pomodoro } from "@/components/desk-components/pomodoro/pomodoro";
+import Pomodoro from "@/components/desk-components/pomodoro/pomodoro";
 
 export const metadata = {
   title: "Desk",
@@ -11,7 +11,7 @@ const Desk = () => {
   return (
     <div className="px-6">
       <NotebookSummary />
-      <div className="flex justify-between">
+      <div className="flex justify-around">
         <NoteTaking />
         <Pomodoro />
       </div>
