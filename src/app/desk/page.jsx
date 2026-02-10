@@ -9,11 +9,12 @@ export const metadata = {
 
 const Desk = () => {
   return (
-    <div>
-      <h1>Work Area</h1>
+    <div className="px-6">
       <NotebookSummary />
-      <NoteTaking />
-      <Pomodoro />
+      <div className="flex justify-between">
+        <NoteTaking />
+        <Pomodoro />
+      </div>
     </div>
   );
 };

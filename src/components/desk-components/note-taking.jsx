@@ -71,6 +71,7 @@ const NoteTaking = () => {
       {note.map((note) => (
         <Note key={note.id} phrase={note.key} description={note.description} />
       ))}
+      
 
       <Summary>ok</Summary>
       <NoteActions />
