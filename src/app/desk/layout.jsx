@@ -16,6 +16,9 @@ const DeskLayout = ({ children }) => {
   const selectBook = ({ title, notes }) => {
     setActive([title, notes]);
   };
+  const selectNote = (title) => {
+    console.log(title);
+  };
 
   return (
     <div className="flex h-screen">
@@ -33,7 +36,7 @@ const DeskLayout = ({ children }) => {
 
       <div className="w-1/5">
         <SidePanel label="Notes">
-          <Notes data={active[1]} />
+          <Notes data={active[1]} onSelect={selectNote} />
         </SidePanel>
       </div>
     </div>

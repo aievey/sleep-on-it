@@ -1,12 +1,16 @@
-const Notes = ({ data }) => {
+const Notes = ({ data, onSelect }) => {
   return (
-    <div>
+    <>
       {data.map((note) => (
-        <div key={note.id} className="bg-white">
+        <div
+          key={note.id}
+          className="bg-white hover:cursor-pointer"
+          onClick={() => onSelect(note.title)}
+        >
           {note.title}
         </div>
       ))}
-    </div>
+    </>
   );
 };
 
