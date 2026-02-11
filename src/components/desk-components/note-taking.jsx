@@ -5,14 +5,14 @@ const Note = ({ phrase, description }) => {
   return (
     <div className="flex gap-2">
       <textarea
-        className="w-1/3 rounded-xl bg-purple-400 p-5"
+        className="w-1/3 rounded-xl bg-stone-100 p-5"
         type="text"
-        defaultValue={phrase}
+        placeholder={phrase}
       />
       <textarea
-        className="w-2/3 rounded-xl bg-purple-400 p-5"
+        className="w-2/3 rounded-xl bg-stone-100 p-5"
         type="text"
-        defaultValue={description}
+        placeholder={description}
       />
     </div>
   );
@@ -22,18 +22,18 @@ const Summary = ({ children }) => {
   return (
     <textarea
       required
-      className="h-70 w-full rounded-xl bg-amber-400 p-5 text-amber-800"
-      defaultValue={children}
+      className="h-70 w-full rounded-xl bg-stone-100 p-5"
+      placeholder="Summarize here..."
       type="text"
     />
   );
 };
 
-const PomodoroActions = () => {
+const CornellActions = () => {
   return (
     <div className="flex gap-2">
       <button className="w-1/2 rounded-xl bg-orange-500 p-5 font-semibold tracking-wide text-green-50 hover:cursor-pointer">
-        New POMODORO
+        New Cornell Note
       </button>
       <button className="w-1/2 rounded-xl bg-blue-400 p-5 text-lg font-semibold tracking-wide text-blue-50 hover:cursor-pointer">
         Save
@@ -44,7 +44,10 @@ const PomodoroActions = () => {
 
 const NewNote = () => {
   return (
-    <button className="w-full rounded-xl bg-green-500 p-4 font-semibold tracking-wide text-green-50">
+    <button
+      type="button"
+      className="w-full rounded-xl bg-green-500 p-4 font-semibold tracking-wide text-green-50"
+    >
       Add Note
     </button>
   );
@@ -57,11 +60,6 @@ const NoteTaking = () => {
       key: "Key",
       description: "Description",
     },
-    {
-      id: 2,
-      key: "Hello",
-      description: "super Description",
-    },
   ]);
 
   const today = new Date().toDateString();
@@ -69,11 +67,11 @@ const NoteTaking = () => {
   return (
     <main className="max-w-1/2 space-y-2 text-stone-800">
       {/* Head of the note */}
-      <div className="flex justify-between rounded-xl border p-5">
+      <div className="flex justify-between rounded-xl bg-stone-100 p-5">
         <div className="w-1/3">{today}</div>
         <input
           className="w-2/3 font-semibold tracking-wide"
-          defaultValue="Title"
+          placeholder="Title"
           type="text"
         />
       </div>
@@ -82,8 +80,8 @@ const NoteTaking = () => {
       ))}
 
       <NewNote />
-      <Summary>ok</Summary>
-      <PomodoroActions />
+      <Summary />
+      <CornellActions />
     </main>
   );
 };

@@ -27,6 +27,7 @@ const Session = ({ children }) => {
     </div>
   );
 };
+
 const Notes = ({ data, onSelect }) => {
   return (
     <div className="bg-stone-700 py-4 text-white">

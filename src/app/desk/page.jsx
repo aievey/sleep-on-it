@@ -13,7 +13,7 @@ const Desk = () => {
       <NotebookSummary />
       <div className="flex justify-around">
         <NoteTaking />
-        <Pomodoro />
+        {/* <Pomodoro /> */}
       </div>
     </div>
   );
