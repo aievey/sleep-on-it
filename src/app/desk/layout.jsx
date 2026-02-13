@@ -5,7 +5,7 @@ import BookShelf from "@/components/desk-components/books/book-shelf";
 import Account from "@/components/desk-components/account";
 import { notebooks } from "@/library/notebooks";
 import { useState } from "react";
-import Notes from "@/components/desk-components/notes/note";
+import Notes from "@/components/desk-components/notes/notes";
 
 const DeskLayout = ({ children }) => {
   const [active, setActive] = useState([

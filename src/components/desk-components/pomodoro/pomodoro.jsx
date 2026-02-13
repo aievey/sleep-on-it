@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { TimerDisplay } from "./timeDisplay";
 import { Controls } from "./controls";
 
-export function Pomodoro() {
+export default function Pomodoro() {
   const timers = {
     shortBreak: 300,
     longBreak: 900,
