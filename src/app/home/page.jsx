@@ -1,36 +1,63 @@
-export const metadata = {
-  title: "Sleep on it! | HOME",
-  description: "The best productive learning app on the market",
-};
+"use client";
+import '../globals.css';
+import React from "react";
 
-const Welcome = () => {
+// export const metadata = {
+//   title: "Sleep on it! | HOME",
+//   description: "The best productive learning app on the market",
+// };
+
+function Welcome() {
   return (
-    <div>
-      <div>
-        <h1>Hello %User%</h1>
-      </div>
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="border p-4 w-full max-w-5xl  relative grid grid-rows-[auto_auto_1fr_auto] gap-4">
 
-      {/* Over all learning health Productivity status etc */}
-      <div>
-        <h2>Hey, here is your learning stats.</h2>
-        <p>Streak: 🔥x5 </p>
-      </div>
+        {/* Header */}
+        <div className="text-center font-semibold text-white text-lg">
+          Home/welcome
+        </div>
 
-      {/* Reminder set by user when he was last active if none then automatic reminders of where he left off*/}
-      <div>
-        <h2>To-dos for today</h2>
-        <p>
-          Hey, you must be feeling great after that productive long day
-          yesterday! Here are some key points to recall before you start you day
-          with great energy today
-        </p>
-      </div>
-      <div>
-        <button>I want to start on something new!</button>
-        <button>Take me where we left off.</button>
+        {/* Date & Time */}
+        <div className="bg-blue-500 py-2 px-4 rounded mx-auto w-fit">
+          todays date and time
+        </div>
+
+        {/* Main content */}
+        <div className="grid grid-cols-[200px_1fr] gap-4">
+          
+          {/* Welcome box */}
+          <div className="bg-pink-300 rounded-lg flex items-center justify-center h-40 w-full text-center">
+            Welcome<br/>(Name!)
+          </div>
+
+          {/* Learning streak box */}
+          <div className="border rounded-lg p-4 flex flex-col justify-between">
+            <div className="border rounded p-2 mb-2 text-sm">
+              LearningStreak
+              <div className="mt-2 text-xs">
+                {"{Topic} {Some motivation}"}<br/>
+                This will take you back to what you were doing
+              </div>
+            </div>
+            <div className="mt-auto">
+              Summary?/Suggestions?
+            </div>
+          </div>
+        </div>
+
+        {/* Buttons */}
+        <div className="flex gap-4 justify-start mt-4">
+          <button className="bg-red-300 px-4 py-2 rounded">new note-book</button>
+          <button className="bg-red-300 px-4 py-2 rounded">Continue where you left off</button>
+        </div>
+
+        {/* Small circle at top-right */}
+        <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-pink-300"></div>
+
       </div>
     </div>
   );
-};
+}
+
 
 export default Welcome;
