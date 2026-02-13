@@ -6,9 +6,9 @@ import { Controls } from "./controls";
 
 export function Pomodoro() {
   const timers = {
-    shortBreak: 15,
+    shortBreak: 300,
     longBreak: 900,
-    study: 10
+    study: 1500
   }
 
   const [mode, setMode] = useState("study"); // shortbreak || longbreak
