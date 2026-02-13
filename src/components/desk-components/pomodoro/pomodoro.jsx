@@ -6,25 +6,30 @@ import { Controls } from "./controls";
 
 export default function Pomodoro() {
   const timers = {
-    shortBreak: 300,
+    shortBreak: 15,
     longBreak: 900,
-    study: 1500,
-  };
+    study: 10
+  }
 
-  const [mode, setMode] = useState("shortBreak"); // shortbreak || longbreak
-  const [timeLeft, setTimeLeft] = useState(timers.shortBreak); //to update timer
+  const [mode, setMode] = useState("study"); // shortbreak || longbreak
+  const [timeLeft, setTimeLeft] = useState(timers.study); //to update timer
   const [isPaused, setIsPaused] = useState(false); // see if timer paused
-  const [sessions, setSessions] = useState(0); //count number of sessions
+  const [pomodoro, setPomodoros] = useState(0); //count number of sessions
+  const [isStarted, setIsStarted] = useState(false);
+  const [sound,setSound]=useState(true);
+
+  const audioRef=useRef(null);
 
   useEffect(() => {
-    if (isPaused) return;
-    if (timeLeft <= 0) return 0;
+    if (!isStarted || isPaused || timeLeft <= 0) return;
+
     const interval = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
+      setTimeLeft(prev => prev - 1)
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isPaused, timeLeft]);
+  }, [isPaused, isStarted, timeLeft]);
+
 
   useEffect(() => {
     if (timeLeft !== 0) return;
