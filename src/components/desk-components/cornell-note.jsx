@@ -34,7 +34,7 @@ const CornellNoteTaking = ({ bookId, sessionId, session, pomodoro }) => {
   const today = new Date().toDateString();
   const book = bookId;
   // console.log(book);
-  console.log("pomodoro num",pomodoro)
+  // console.log("pomodoro num",pomodoro)
   const [cornellNote, setCornellNote] = useState({
     title: "",
     kvp: [

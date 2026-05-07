@@ -220,8 +220,10 @@ export default function Pomodoro({bookId,userId,sessionId,setSessionId,pomodoro,
 //todo::
 //make the timer persisist on refresh so that users can track their sessions and pomodoros over time
 
+//done
 //change the db of notes and include session_id as uuid and pomodoro_num as integer , session_num as integer. so that we can connect the notes taken to the session and pomodoro in which they were taken
 
+//done
 //connect the session and pomodoro number to the notes taken in the cornell note taking component. so that users can track which notes were taken in which session and pomodoro
 
 //display the notes acc to the session and pomodoro count. so that users can track which notes were taken in which session and pomodoro
